@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #00c58c;
+    padding: 25px 40px;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+}
+
+.main-grid{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 380px));
+    justify-content: center;
+    justify-items: center;
+}
+
+.main-title{
+    text-align: center;
+    font-size: 36px;
+    margin: 50px 20px 30px 20px;
+    color: rgb(71, 71, 71);
+}
+
+.main-section-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    gap: 20px;
+    padding: 25px 35px;
+}
+
+.result-title{
+    color: rgba(0, 0, 0, 0.397);
+}
+
+.result-parcela-price{
+    color: #00c6a1;
+
+    font-size: 28px;
+}
+
+.result-parcela{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.result-btn{
+    background-color: #a6ff2d;
+    color: #275031;
+    font-weight: bold;
+
+    padding: 10px 50px;
+    border-radius: 25px;
+    border: 0px;
+}
+
+.result-sub-title{
+    color: gray;
+}
+
+.result-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-row{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.row-col{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input[type="text"],input[type="number"]{
+    padding: 8px 10px;
+    max-width: 170px;
+
+}
+
+#footer{
+    display: block;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    text-align: center;
+}
+
+.footer-text{
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 12px;
+}
+
+.ajuda{
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    color: white;
+}
+
+.garantias{
+    padding: 8px 10px;
+    width: 170px;
+}
