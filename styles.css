@@ -47,6 +47,14 @@ body{
     background-color: #fff;
     gap: 20px;
     padding: 25px 35px;
+
+    -webkit-box-shadow: 0px -7px 5px 0px rgba(186,186,186,1);
+    -moz-box-shadow: 0px -7px 5px 0px rgba(186,186,186,1);
+    box-shadow: 0px -7px 5px 0px rgba(186,186,186,1);
+}
+
+.main-section-inputs{
+    padding: 20px;
 }
 
 .result-title{
@@ -94,12 +102,19 @@ body{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
 }
 
-input[type="text"],input[type="number"]{
+input[type="number"]{
     padding: 8px 10px;
     max-width: 170px;
+    width: 100%;
+}
 
+input[type="range"]{
+    padding: 8px 10px;
+    max-width: 170px;
+    width: 100%;
 }
 
 #footer{
@@ -114,6 +129,7 @@ input[type="text"],input[type="number"]{
     text-align: center;
     padding: 20px 30px;
     font-size: 12px;
+    margin-top: 45px;
 }
 
 .ajuda{
@@ -127,5 +143,6 @@ input[type="text"],input[type="number"]{
 
 .garantias{
     padding: 8px 10px;
-    width: 170px;
+    width: 100%;
+    max-width: 170px;
 }
