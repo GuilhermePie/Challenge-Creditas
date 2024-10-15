@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 body{
@@ -145,4 +146,10 @@ input[type="range"]{
     padding: 8px 10px;
     width: 100%;
     max-width: 170px;
+}
+
+@media screen and (max-width: 667px) {
+	.main-title{
+        font-size: 26px;
+    }
 }
