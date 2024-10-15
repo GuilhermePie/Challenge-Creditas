@@ -73,8 +73,9 @@ solicitarParcela.addEventListener('click', ()=>{
 
     const valorDaParcela = valorTotalAPagar / numeroDeParcelas.value
 
-    valorDaParcelaApagar.innerText = valorDaParcela.toLocaleString('pt-BR', { currency: 'BRL' })
-    valorTotal.innerText = `R$ ${valorTotalAPagar.toLocaleString('pt-BR', { currency: 'BRL' })}`
+    valorDaParcelaApagar.innerText = valorDaParcela.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' }).substring(3)
+
+    valorTotal.innerText = valorTotalAPagar.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' })
 })
 
 // formulas
