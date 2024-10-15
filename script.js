@@ -19,7 +19,7 @@ const veiculo = {
     maximoEmprestimo:100000,
     prazos:[24,36,48],
     minGarantia:5000,
-    maxGarantia:3000000
+    maxGarantia:300000
 }
 const imovel = {
     minimoEmprestimo:30000,
@@ -36,7 +36,6 @@ valorDoRangeGarantia.addEventListener('input',(event)=>{
 valorDoRangeEmprestimo.addEventListener('input',(event)=>{
     valorDoEmprestimo.value = event.target.value
 })
-console.log(tipoDeGarantia.value)
 
 tipoDeGarantia.addEventListener('change',(event)=>{
     if(event.target.value === 'veiculo'){
@@ -57,28 +56,42 @@ tipoDeGarantia.addEventListener('change',(event)=>{
         valorDaGarantia.value = '50000'
         valorDoEmprestimo.value = '30000'
         numeroDeParcelas.innerHTML = ''
+
         imovel.prazos.forEach(prazo => {
             numeroDeParcelas.innerHTML += `<option>${prazo}</option>`
         });
+        
         valorDoRangeGarantia.setAttribute('min',imovel.minGarantia)
         valorDoRangeGarantia.setAttribute('max',imovel.maxGarantia)
-
         valorDoRangeEmprestimo.setAttribute('min',imovel.minimoEmprestimo)
         valorDoRangeEmprestimo.setAttribute('max',imovel.maximoEmprestimo)
     }
 })
 
 solicitarParcela.addEventListener('click', ()=>{
-    const valorTotalAPagar = ((iof / 100) + (taxaDeJuros / 100) + (numeroDeParcelas.value / 1000) + 1) * valorDoEmprestimo.value
 
-    const valorDaParcela = valorTotalAPagar / numeroDeParcelas.value
+    const valorDoEmprestimoValidacao = validacao()
 
-    valorDaParcelaApagar.innerText = valorDaParcela.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' }).substring(3)
+    if(valorDoEmprestimoValidacao){
 
-    valorTotal.innerText = valorTotalAPagar.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' })
+        const valorTotalAPagar = ((iof / 100) + (taxaDeJuros / 100) + (numeroDeParcelas.value / 1000) + 1) * valorDoEmprestimo.value
+
+        const valorDaParcela = valorTotalAPagar / numeroDeParcelas.value
+
+        valorDaParcelaApagar.innerText = valorDaParcela.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' }).substring(3)
+
+        valorTotal.innerText = valorTotalAPagar.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' })
+    }else{
+        alert('Valor da Garantia é muito baixo em relação ao valor do emprestimo')
+    }
 })
 
-// formulas
-// const valorTotalAPagar = ((iof / 100) + (taxaDeJuros / 100) + (prazo / 1000) + 1) * valorDoEmprestimo
-
-// const valorDaParcela = valorTotalAPagar / prazo
+//valida se garantia é o suficiente para emprestimo
+function validacao(){
+    const maximoParaEmprestimo = valorDaGarantia.value * 0.8
+    if(valorDoEmprestimo.value <= maximoParaEmprestimo ){
+        return true
+    }else{
+        return false
+    }  
+}
