@@ -1,0 +1,15 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #00c58c;
+    padding: 25px 40px;
+}
+
+.ajuda{
+    text-decoration: none;
+    color: white;
+}
+
+.logo{
+    color: white;
+}

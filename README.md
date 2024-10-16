@@ -33,6 +33,7 @@ A aplicação deverá permitir ao usuário escolher o tipo de garantia que quer 
 
 *Fórmula do valor total a pagar*
 
+
 ```javascript
 const valorTotalAPagar = ((iof / 100) + (taxaDeJuros / 100) + (prazo / 1000) + 1) * valorDoEmprestimo
 ```

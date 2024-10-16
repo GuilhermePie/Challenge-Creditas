@@ -4,11 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/section_inputs.css">
+    <link rel="stylesheet" href="./styles/section_results.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/main.css">
     <title>Desafio #1</title>
 </head>
 
 <body>
+    <header id="header">
+        <p class="logo">CREDITAS</p>
+        <a class="ajuda" href="#">Ajuda</a>
+    </header>
 
+    <main id="main">
+        <h1 class="main-title">Realize uma simulação de credito utilizando seu bem como garantia.</h1>
+        <div class="main-grid">
+            <section class="main-section-inputs">
+                <div class="section-row">
+                    <div class="row-col">
+                        <label for="numero-parcelas">Número de parcelas</label>
+                        <select name="numero-parcelas" id="numero-parcelas" class="garantias">
+                            <option value="24">24</option>
+                            <option value="36">36</option>
+                            <option value="48">48</option>
+                        </select>
+                    </div>
+                    <div class="row-col">
+                        <label for="garantia">Garantia</label>
+                        <select name="garantia" id="garantia" class="garantias">
+                            <option value="veiculo" selected>Veículo</option>
+                            <option value="imovel">Imóvel</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-row">
+                    <div class="row-col">
+                        <label for="valor-garantia">Valor da Garantia</label>
+                        <input type="number" id="valor-garantia" value="5000">
+                        <span class="span-error display-none" id="spanError">Garantia baixa</span>
+                    </div>
+                    <input type="range" id="valor-garantia-range" min="5000" max="300000" step="5000" value="5000">
+                </div>
+
+                <div class="section-row">
+                    <div class="row-col">
+                        <label for="valor-emprestimo">Valor do Empréstimo</label>
+                        <input type="number" id="valor-emprestimo" value="3000">
+                    </div>
+                    <input type="range" id="valor-emprestimo-range" min="3000" max="100000" step="1000" value="3000">
+                </div>
+            </section>
+            <section class="main-section-result">
+                <div class="result-infos">
+                    <h2 class="result-title">Valor da Parcela</h2>
+                    <p class="result-parcela">R$ <span class="result-parcela-price" id="valor-parcela">00,00</span></p>
+                </div>
+
+                <div class="result-infos">
+                    <p class="result-sub-title">Total a Pagar</p>
+                    <p id="total-pagar">R$ 00,00</p>
+                </div>
+
+                <div class="result-infos">
+                    <p class="result-sub-title">
+                        Taxa de Juros (mês)
+                    </p>
+                    <p id="taxa-juros">2.34%</p>
+                </div>
+
+                <button class="result-btn" id="solicitar-parcela">SOLICITAR</button>
+            </section>
+        </div>
+        <p class="footer-text">
+            *Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia labore eaque velit eius natus aliquam, quas
+        </p>
+    </main>
+    <script src="script.js"></script>
 </body>
 
 </html>
