@@ -1,0 +1,44 @@
+.main-section-inputs{
+    padding: 20px;
+}
+
+input[type="number"]{
+    padding: 8px 10px;
+    max-width: 170px;
+    width: 100%;
+}
+
+input[type="range"]{
+    padding: 8px 10px;
+    max-width: 170px;
+    width: 100%;
+}
+
+.garantias{
+    padding: 8px 10px;
+    width: 100%;
+    max-width: 170px;
+}
+
+.span-error{
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.display-none{
+    display: none;
+}
+
+.section-row{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.row-col{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}

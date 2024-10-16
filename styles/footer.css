@@ -1,0 +1,14 @@
+#footer{
+    display: block;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    text-align: center;
+}
+
+.footer-text{
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 12px;
+    margin-top: 45px;
+}

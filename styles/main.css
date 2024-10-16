@@ -1,0 +1,27 @@
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90vh;
+}
+
+.main-grid{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 380px));
+    justify-content: center;
+    justify-items: center;
+}
+
+.main-title{
+    text-align: center;
+    font-size: 36px;
+    margin: 50px 20px 30px 20px;
+    color: rgb(71, 71, 71);
+}
+
+@media screen and (max-width: 667px) {
+	.main-title{
+        font-size: 26px;
+    }
+}
