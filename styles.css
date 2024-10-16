@@ -148,6 +148,16 @@ input[type="range"]{
     max-width: 170px;
 }
 
+.span-error{
+    color: red;
+    font-size: 14px;
+    display: block;
+}
+
+.display-none{
+    display: none;
+}
+
 @media screen and (max-width: 667px) {
 	.main-title{
         font-size: 26px;

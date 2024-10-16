@@ -8,6 +8,8 @@ const valorDaParcelaApagar = document.getElementById('valor-parcela')
 const valorTotal = document.getElementById('total-pagar')
 const valorDoJuros = document.getElementById('taxa-juros')
 
+const spanError = document.getElementById('spanError')
+
 const valorDoRangeGarantia = document.getElementById('valor-garantia-range')
 const valorDoRangeEmprestimo = document.getElementById('valor-emprestimo-range')
 
@@ -28,7 +30,9 @@ const imovel = {
     minGarantia:50000,
     maxGarantia:100000000
 }
-//funções
+//-----------
+
+
 valorDoRangeGarantia.addEventListener('input',(event)=>{
     valorDaGarantia.value = event.target.value
 })
@@ -60,7 +64,7 @@ tipoDeGarantia.addEventListener('change',(event)=>{
         imovel.prazos.forEach(prazo => {
             numeroDeParcelas.innerHTML += `<option>${prazo}</option>`
         });
-        
+
         valorDoRangeGarantia.setAttribute('min',imovel.minGarantia)
         valorDoRangeGarantia.setAttribute('max',imovel.maxGarantia)
         valorDoRangeEmprestimo.setAttribute('min',imovel.minimoEmprestimo)
@@ -81,8 +85,6 @@ solicitarParcela.addEventListener('click', ()=>{
         valorDaParcelaApagar.innerText = valorDaParcela.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' }).substring(3)
 
         valorTotal.innerText = valorTotalAPagar.toLocaleString('pt-BR', { style: 'currency',currency: 'BRL' })
-    }else{
-        alert('Valor da Garantia é muito baixo em relação ao valor do emprestimo')
     }
 })
 
@@ -90,8 +92,10 @@ solicitarParcela.addEventListener('click', ()=>{
 function validacao(){
     const maximoParaEmprestimo = valorDaGarantia.value * 0.8
     if(valorDoEmprestimo.value <= maximoParaEmprestimo ){
+        spanError.classList.add('display-none')
         return true
     }else{
+        spanError.classList.remove('display-none')
         return false
     }  
 }
